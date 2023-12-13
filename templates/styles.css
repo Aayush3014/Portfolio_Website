@@ -1,3 +1,7 @@
+.body{
+    background-color: #E5E5E5;
+}
+
 .navigation-bar{
     background-color: rgb(32, 67, 71);
     height: 60px;
@@ -8,6 +12,78 @@
 
 .navigation-bar-content{
     margin-top: 15px;
-    color: aqua;
+    color: #ffffff;
     text-decoration: none;
+    font-size: 25px;
+}
+
+.hero{
+    background-color: rgb(32, 67, 71);
+    height: 70vh;
+    color: #ffffff;
+}
+
+#profile_pic{
+    height: 200px;
+    width: 200px;
+}
+
+.hero-content{
+    width: 800px;
+    margin: 0 auto;
+    padding: 3em;
+
+}
+
+.hero-content-intro{
+    display: flex;
+    gap: 2em;
+    color: #ffffff;
+    align-items: center;
+    justify-content: center;
+}
+
+.intro-name{
+    font-size: 80px;
+    font-weight: 600;
+}
+
+.hero-content-subheadline{
+    text-align: center;
+    margin-top: 3em;
+}
+
+.position{
+    font-size: 50px;
+}
+
+.description{
+    font-size: 20px;
+
+}
+
+
+.project-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3em;
+    margin-top: 2em;
+    margin-bottom: 2em;
+
+}
+
+
+/* .project-column{
+    width: 300px;
+} */
+
+
+.project-thumbnail{
+    width: 100%;
+}
+
+
+.project-body{
+    background-color: #ffffff;
+    padding: 1em;
 }
