@@ -1,0 +1,13 @@
+.navigation-bar{
+    background-color: rgb(32, 67, 71);
+    height: 60px;
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+}
+
+.navigation-bar-content{
+    margin-top: 15px;
+    color: aqua;
+    text-decoration: none;
+}
