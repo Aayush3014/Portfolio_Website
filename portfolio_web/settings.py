@@ -65,9 +65,9 @@ WSGI_APPLICATION = 'portfolio_web.wsgi.application'
 DATABASES = {
 	'default': {
 		'ENGINE': 'django.db.backends.mysql',
-		'NAME': 'portfoliodata',
+		'NAME': 'portfolioDB',
 		'USER': 'root',
-		'PASSWORD': 'axle1234',
+		'PASSWORD': 'pass',
 		'HOST':'localhost',
 		'PORT':'3306',
 	}
