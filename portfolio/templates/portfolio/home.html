@@ -61,34 +61,38 @@
             <h3>My Projects</h3>
 
             <div class="project-wrapper">
+                {% for project in projects %}
                     <div class="project-column">
                         
                         <img class="project-thumbnail" src="{% static 'images/ecommerce_img.jpg'%}" alt="">
                         
                         <div class="project-body">
-                            <h5>E-Commerce Website</h5>
+                            <h5>{{project.project_title}}</h5>
                         </div>
                     </div>
+                {%empty%}
+                    <h3>There are no projects in the database...</h3>
+                {% endfor %}
 
                     
-                    <div class="project-column">
+                    <!-- <div class="project-column">
                         
                         <img class="project-thumbnail" src="{% static 'images/foodapp.png'%}" alt="">
                         
                         <div class="project-body">
                             <h5>Food App</h5>
                         </div>
-                    </div>
+                    </div> -->
 
 
-                    <div class="project-column">
+                    <!-- <div class="project-column">
                         
                         <img class="project-thumbnail" src="{% static 'images/resume_website.png'%}" alt="">
                         
                         <div class="project-body">
                             <h5>Resume Generator</h5>
                         </div>
-                    </div>
+                    </div> -->
             </div>
             
             <div class="about-me-wrapper">
