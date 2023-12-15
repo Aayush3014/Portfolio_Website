@@ -64,7 +64,7 @@
                 {% for project in projects %}
                     <div class="project-column">
                         
-                        <img class="project-thumbnail" src="{% static 'images/ecommerce_img.jpg'%}" alt="">
+                        <img class="project-thumbnail" src="{{project.project_thumbnail}}" alt="">
                         
                         <div class="project-body">
                             <h5>{{project.project_title}}</h5>

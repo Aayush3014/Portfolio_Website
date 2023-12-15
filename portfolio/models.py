@@ -6,7 +6,7 @@ import uuid
 
 class ProjectModel(models.Model):
     project_title = models.CharField(max_length=200)
-    # project_thumbnail = models.ImageField(upload_to=)
+    project_thumbnail = models.ImageField(null=True)
     project_description = models.TextField()
     project_slug = models.SlugField(null=True, blank=True)
     project_created_at = models.DateTimeField(auto_now_add=True)
