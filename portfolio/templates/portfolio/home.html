@@ -95,35 +95,31 @@
                 
                 <h3>Skills</h3>
 
-                <div class="skill-wrapper">
-                    
-                    <h5>Python</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, odit.</p>
                 
-                </div>
 
                 <div class="skill-wrapper">
-                    
-                    <h5>Django</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, odit.</p>
+                    {% for skill in detailedSkills %}
+                        <h5>{{skill.skill_title}}</h5>
+                        <p>{{skill.skill_description}}</p>
+                    {% empty %}
+                        <h3>There are no skills in the database...</h3>
+                    {% endfor %}
                 
-                </div>
-
-                <div class="skill-wrapper">
-                    
-                    <h5>MySQL</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, odit.</p>
-                
-                </div>
+                </div> 
                 
 
                 <h4>Other Skills</h4>
                 <div class="other--skills--wrapper">
-                    <div class="skills--tag">
-                        <span>AWS</span>
-                    </div>
 
-                    <div class="skills--tag">
+                    {% for skill in skills %}
+                        
+                        <div class="skills--tag">
+                            <span>{{skill.skill_title}}</span>
+                        </div>
+                    
+                    {% endfor %}
+
+                    <!-- <div class="skills--tag">
                         <span>Git</span>
                     </div>
 
@@ -133,7 +129,7 @@
 
                     <div class="skills--tag">
                         <span>PostgreSQL</span>
-                    </div>
+                    </div> -->
                 </div>
 
 

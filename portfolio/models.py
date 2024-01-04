@@ -20,7 +20,7 @@ class ProjectModel(models.Model):
     
 class SkillsModel(models.Model):
     skill_title = models.CharField(max_length=200)
-    skill_description = models.TextField()
+    skill_description = models.TextField(null=True, blank=True)
     skill_created_at = models.DateTimeField(auto_now_add=True)
     id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
     
