@@ -127,6 +127,12 @@
     gap: 1em;
 }
 
+
+.project--image{
+    max-width: 800px;
+    margin-top: 2em;
+}
+
 @media  (max-width: 900px){
     .hero-content-intro{
         flex-direction: column;

@@ -1,0 +1,15 @@
+{% extends 'portfolio/main.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    <div class="container">
+        <img class="project--image" src="{{project.project_thumbnail.url}}" alt="">
+
+        <h1>{{project.project_title}}</h1>
+        <hr>
+        <p>{{project.project_description}}</p>
+    </div>
+
+{% endblock content %}
