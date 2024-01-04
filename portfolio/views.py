@@ -1,5 +1,7 @@
+# from multiprocessing import context
 from django.shortcuts import render
 from .models import ProjectModel, SkillsModel, SkillsTagModel
+from .forms import ProjectForm
 
 def homePage(request):
     projects = ProjectModel.objects.all()
@@ -21,3 +23,11 @@ def projectpage(request, pk):
         'project':project,
     }
     return render(request, 'portfolio/project.html', context)
+
+
+def addProject(request):
+    form = ProjectForm()
+    context = {
+        'form':form,
+    }   
+    return render(request, 'portfolio/project_form.html',context)
