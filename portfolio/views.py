@@ -1,7 +1,5 @@
 from django.shortcuts import render
 from .models import ProjectModel, SkillsModel, SkillsTagModel
-# Create your views here.
-
 
 def homePage(request):
     projects = ProjectModel.objects.all()
@@ -12,5 +10,14 @@ def homePage(request):
         'skills':skills,
         'detailedSkills':detailedSkills,
     }
-    print(context)
     return render(request, 'portfolio/home.html', context)
+
+
+
+def projectpage(request, pk):
+    # context = {}
+    project = ProjectModel.objects.get(id=pk)
+    context = {
+        'project':project,
+    }
+    return render(request, 'portfolio/project.html', context)
