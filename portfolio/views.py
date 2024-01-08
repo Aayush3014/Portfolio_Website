@@ -1,5 +1,6 @@
 # from multiprocessing import context
-from django.shortcuts import render
+import re
+from django.shortcuts import render, redirect
 from .models import ProjectModel, SkillsModel, SkillsTagModel
 from .forms import ProjectForm
 
@@ -27,6 +28,11 @@ def projectpage(request, pk):
 
 def addProject(request):
     form = ProjectForm()
+    if request.method == "POST":
+        form = ProjectForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
     context = {
         'form':form,
     }   
