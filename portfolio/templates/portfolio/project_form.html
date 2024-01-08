@@ -1,18 +1,29 @@
 {% extends 'portfolio/main.html' %}
-
 {% load static %}
-
 {% block content %}
 
-    <div class="container">
-        <h3>Project Form</h3>
+<div class="container">
+    <h3>Project Form</h3>
 
-        <form method="POST" >
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">Save</button>
+    <form method="POST" enctype="multipart/form-data">
+        <!-- multipart/form-data: This value is used when a form requires binary data, typically when dealing with 
+        file uploads. It allows the form data to be transmitted as a series of parts, each containing a part of the 
+        form data, including the file(s) being uploaded. -->
+        {% csrf_token %}
+        {{form.media}}
+        {% for field in form %}
 
-    </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">{{field.label}}</label>
+            {{field}}
+        </div>
+
+        {% endfor %}
+
+        <input class="btn btn-primary" type="submit" value="submit">
+
+    </form>
+</div>
 
 
 {% endblock content %}
