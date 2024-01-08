@@ -1,5 +1,4 @@
-# from multiprocessing import context
-import re
+
 from django.shortcuts import render, redirect
 from .models import ProjectModel, SkillsModel, SkillsTagModel
 from .forms import ProjectForm
