@@ -68,6 +68,8 @@ def inboxPage(request):
 
 def messagePage(request, pk):
     message = Message.objects.get(id=pk)
+    message.is_read = True
+    message.save()
     context = {
         'message':message
     }
