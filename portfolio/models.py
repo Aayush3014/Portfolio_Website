@@ -1,13 +1,17 @@
 from django.db import models
 import uuid
 
+# For Adding CKEditor to our project Editing Form.
+from ckeditor_uploader.fields import RichTextUploadingField
 # Create your models here.
 
 
 class ProjectModel(models.Model):
     project_title = models.CharField(max_length=200)
     project_thumbnail = models.ImageField(null=True)
-    project_description = models.TextField()
+    
+    # For Adding CKEditor to our project Editing Form.
+    project_description = RichTextUploadingField()
     project_slug = models.SlugField(null=True, blank=True)
     project_created_at = models.DateTimeField(auto_now_add=True)
     id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)

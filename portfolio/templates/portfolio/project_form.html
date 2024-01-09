@@ -10,7 +10,12 @@
         file uploads. It allows the form data to be transmitted as a series of parts, each containing a part of the 
         form data, including the file(s) being uploaded. -->
         {% csrf_token %}
-        {{form.media}}
+        {{form.media}}          
+
+        
+        <!-- form.media : It is used for adding image ckeditor in editing form.  -->
+
+
         {% for field in form %}
 
         <div class="mb-3">

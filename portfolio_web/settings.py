@@ -28,6 +28,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'portfolio.apps.PortfolioConfig',
     'ckeditor',
+    
+    # For Adding CKEditor to our project Editing Form.
+    'ckeditor_uploader',
 ]
 
 MIDDLEWARE = [
@@ -119,6 +122,10 @@ STATICFILES_DIRS = [
 ]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
+
+
+# For Adding CKEditor to our project Editing Form.
+CKEDITOR_UPLOAD_PATH = 'uploads/'
 
 
 

@@ -12,7 +12,9 @@
 
         <hr>
         <a class="btn btn-warning" href="{% url 'edit-project' project.id %}">Edit</a>
-        <p>{{project.project_description}}</p>
+
+        <!-- # For Adding CKEditor to our project Editing Form. -->
+        <p>{{project.project_description|safe}}</p>
     </div>
 
 {% endblock content %}
