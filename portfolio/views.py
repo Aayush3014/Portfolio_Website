@@ -1,7 +1,8 @@
 
 from django.shortcuts import render, redirect
 from .models import ProjectModel, SkillsModel, SkillsTagModel, Message
-from .forms import ProjectForm
+from .forms import ProjectForm, MessageForm
+from django.contrib import messages
 
 
 
@@ -9,17 +10,25 @@ def homePage(request):
     projects = ProjectModel.objects.all()
     detailedSkills = SkillsModel.objects.exclude(skill_description="")
     skills = SkillsModel.objects.filter(skill_description="")
+    
+    form = MessageForm()
+    if request.method == "POST":
+        form = MessageForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request,'Your message is successfully sent.')
+    
     context = {
         'projects':projects,
         'skills':skills,
         'detailedSkills':detailedSkills,
+        'form':form
     }
     return render(request, 'portfolio/home.html', context)
 
 
 
 def projectpage(request, pk):
-    # context = {}
     project = ProjectModel.objects.get(id=pk)
     context = {
         'project':project,
@@ -74,3 +83,6 @@ def messagePage(request, pk):
         'message':message
     }
     return render(request, 'portfolio/message.html', context)
+
+
+

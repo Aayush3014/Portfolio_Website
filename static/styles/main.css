@@ -112,7 +112,11 @@
     padding-bottom: 2em;
 }
 
-
+.section--1{
+    background-color:#ffffff ;
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
 .skills--tag{
     margin-top: 1em;
     background-color: #C4E7F2;
@@ -132,6 +136,13 @@
     max-width: 800px;
     margin-top: 2em;
 }
+
+.contact--form{
+    display: block;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
 
 @media  (max-width: 900px){
     .hero-content-intro{
