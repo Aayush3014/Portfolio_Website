@@ -47,16 +47,16 @@ class SkillsTagModel(models.Model):
 
 
 class Message(models.Model):
-    msg_title = models.CharField(max_length=200, null = True)
-    msg_email = models.CharField(max_length = 200, null = True)
-    msg_subject = models.CharField(max_length = 200, null = True)
-    msg_body = models.TextField()
+    name = models.CharField(max_length=200, null = True)
+    email = models.CharField(max_length = 200, null = True)
+    subject = models.CharField(max_length = 200, null = True)
+    body = models.TextField()
     is_read = models.BooleanField(default=False)
-    msg_created_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(auto_now_add=True)
     
     
     id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
     
     
     def __str__(self):
-        return self.msg_title
+        return self.name
