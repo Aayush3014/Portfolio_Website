@@ -1,7 +1,9 @@
 
 from django.shortcuts import render, redirect
-from .models import ProjectModel, SkillsModel, SkillsTagModel
+from .models import ProjectModel, SkillsModel, SkillsTagModel, Message
 from .forms import ProjectForm
+
+
 
 def homePage(request):
     projects = ProjectModel.objects.all()
@@ -53,3 +55,20 @@ def editProject(request, pk):
     return render(request, 'portfolio/project_form.html',context)
     
     
+    
+    
+    
+def inboxPage(request):
+    inbox = Message.objects.all().order_by('is_read')
+    unreadCount = Message.objects.filter(is_read=False).count()
+    
+    context = {'inbox': inbox, 'unreadCount': unreadCount}
+    return render(request, 'portfolio/inbox.html', context)
+
+
+def messagePage(request, pk):
+    message = Message.objects.get(id=pk)
+    context = {
+        'message':message
+    }
+    return render(request, 'portfolio/message.html', context)

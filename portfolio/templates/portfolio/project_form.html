@@ -9,10 +9,11 @@
         <!-- multipart/form-data: This value is used when a form requires binary data, typically when dealing with 
         file uploads. It allows the form data to be transmitted as a series of parts, each containing a part of the 
         form data, including the file(s) being uploaded. -->
+        
         {% csrf_token %}
         {{form.media}}          
 
-        
+         <!-- For Adding CKEditor to our project Editing Form. -->
         <!-- form.media : It is used for adding image ckeditor in editing form.  -->
 
 

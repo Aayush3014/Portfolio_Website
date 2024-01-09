@@ -1,0 +1,14 @@
+{% extends 'portfolio/main.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+
+    <p>Name: {{message.msg_title}}</p>
+    <p>Email: {{message.msg_email}}</p>
+    <hr>
+    <p>{{message.msg_body}}</p>
+
+</div>
+
+{% endblock content %}
