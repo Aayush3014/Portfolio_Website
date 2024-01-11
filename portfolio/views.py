@@ -1,4 +1,3 @@
-
 from django.shortcuts import render, redirect
 from .models import ProjectModel, SkillsModel, SkillsTagModel, Message
 from .forms import ProjectForm, MessageForm
@@ -86,3 +85,8 @@ def messagePage(request, pk):
 
 
 
+
+
+def addSkill(request):
+    context = {}
+    return render(request, 'portfolio/skill_form.html', context)
