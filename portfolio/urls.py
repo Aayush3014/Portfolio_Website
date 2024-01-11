@@ -1,5 +1,6 @@
+from os import name
 from django.urls import path
-from .views import homePage, projectpage, addProject, editProject, inboxPage, messagePage
+from .views import homePage, projectpage, addProject, editProject, inboxPage, messagePage, addSkill
 
 
 
@@ -10,7 +11,8 @@ urlpatterns = [
     path('add-project/', addProject, name='add-project'),
     path('edit-project/<str:pk>', editProject, name='edit-project'),
     path('inbox/',inboxPage, name='inbox'),
-    path('message/<str:pk>/',messagePage, name='message')
+    path('message/<str:pk>/',messagePage, name='message'),
+    path("add-skill/",addSkill,name='add-skill'),
     
     
 ]

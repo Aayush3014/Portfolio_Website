@@ -1,7 +1,6 @@
-
 from django.shortcuts import render, redirect
 from .models import ProjectModel, SkillsModel, SkillsTagModel, Message
-from .forms import ProjectForm, MessageForm
+from .forms import ProjectForm, MessageForm, skillsForm
 from django.contrib import messages
 
 
@@ -86,3 +85,18 @@ def messagePage(request, pk):
 
 
 
+
+
+def addSkill(request):
+    form = skillsForm()
+    if request.method == "POST":
+        form = skillsForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request,'You have successfully added a skill.')
+            return redirect('home')
+            
+    context = {
+        'form': form
+    }
+    return render(request, 'portfolio/skill_form.html', context)
