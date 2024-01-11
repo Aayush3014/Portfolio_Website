@@ -4,17 +4,64 @@
 
 {% block content %}
 
+
+<style>
+    .project--container{
+        max-width: 800px;
+        margin: 0 auto;
+        margin-top: 2em;
+        margin-bottom: 2em;
+    }
+</style>
+
+
     <div class="container">
         
-        <img class="project--image" src="{{project.project_thumbnail.url}}" alt="">
+            <div class="project--container">
 
-        <h1>{{project.project_title}}</h1>
+                    <img class="project--image" src="{{project.project_thumbnail.url}}" alt="">
 
-        <hr>
-        <a class="btn btn-warning" href="{% url 'edit-project' project.id %}">Edit</a>
+                    <h1>{{project.project_title}}</h1>
 
-        <!-- # For Adding CKEditor to our project Editing Form. -->
-        <p>{{project.project_description|safe}}</p>
+                    <hr>
+                    <a class="btn btn-warning" href="{% url 'edit-project' project.id %}">Edit</a>
+
+                    <!-- # For Adding CKEditor to our project Editing Form. -->
+                    <p>{{project.project_description|safe}}</p>
+
+
+                    <div class="comments--container">
+                        <h3>Comments ({{count}})</h3>
+                        <hr>
+                        <form method="POST" >
+                                {% csrf_token %}        
+                    
+                                {% for field in form %}
+                    
+                                <div class="mb-3">
+                                    <label for="exampleInputPassword1" class="form-label">{{field.label}}</label>
+                                    {{field}}
+                                </div>
+                    
+                                {% endfor %}
+                    
+                                <input class="btn btn-primary" type="submit" value="submit">
+                
+                        </form>
+                        
+                        <hr>
+                        {% for comment in comments %}
+                            <div class="card my-3">
+                                <div class="card-body">
+                                    <h5>{{comment.name}}</h5>
+                                    <small>{{comment.created | timesince}} ago</small>
+                                    <p class="my-3">{{comment.body}}</p>
+
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+            </div>
     </div>
 
 {% endblock content %}
