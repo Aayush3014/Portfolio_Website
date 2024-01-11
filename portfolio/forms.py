@@ -1,7 +1,7 @@
 from dataclasses import fields
 from pyexpat import model
 from django.forms import ModelForm
-from .models import ProjectModel, Message
+from .models import ProjectModel, Message, SkillsModel
 
 
 class ProjectForm(ModelForm):
@@ -72,3 +72,23 @@ class MessageForm(ModelForm):
         self.fields['body'].widget.attrs.update(
             {'class': 'form-control', })
         
+        
+        
+class skillsForm(ModelForm):
+    
+    class Meta:
+        model = SkillsModel
+        fields = "__all__"
+        
+        
+    def __init__(self, *args, **kwargs):
+            
+            
+        super(skillsForm, self).__init__(*args, **kwargs)
+            
+        self.fields['skill_title'].widget.attrs.update(
+            {'class': 'form-control'})
+
+
+        self.fields['skill_description'].widget.attrs.update(
+            {'class': 'form-control', })
