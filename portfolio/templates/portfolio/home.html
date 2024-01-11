@@ -36,9 +36,9 @@
 
             <h3>My Projects</h3>
 
-            <div class="project-wrapper">
+            <div class="project--wrapper">
                 {% for project in projects %}
-                    <div class="project-column">
+                    <div class="project--column">
                         <a href="{% url 'project' project.id  %}">
                         <img class="project-thumbnail" src="{{project.project_thumbnail}}" alt="i">
                         </a>
