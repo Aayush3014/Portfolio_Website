@@ -73,10 +73,10 @@
     margin-bottom: 2em;
     
     
-    /* display: flex;
-    overflow-x: auto;     
+    /* display: flex;*/
+    /* overflow-x: auto;      */
 
-    These two property will be used to add side scrollbar.
+    /*These two property will be used to add side scrollbar.
     It will work when projects start overflowing. */
 
 }

@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from .models import ProjectModel, SkillsModel, SkillsTagModel, Message
-from .forms import ProjectForm, MessageForm, skillsForm
+from .models import ProjectModel, SkillsModel, SkillsTagModel, Message, Comment
+from .forms import ProjectForm, MessageForm, skillsForm, commentForm
 from django.contrib import messages
 
 
@@ -29,8 +29,23 @@ def homePage(request):
 
 def projectpage(request, pk):
     project = ProjectModel.objects.get(id=pk)
+    count = project.comment_set.count()
+    comments = project.comment_set.all().order_by('-created')
+    form = commentForm()
+    if request.method == "POST":
+        form = commentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.project = project
+            comment.save()
+            messages.success(request,'Your message is successfully sent.')
+    
+    
     context = {
         'project':project,
+        'count' : count,
+        'comments': comments,
+        'form':form,
     }
     return render(request, 'portfolio/project.html', context)
 
@@ -100,3 +115,4 @@ def addSkill(request):
         'form': form
     }
     return render(request, 'portfolio/skill_form.html', context)
+
