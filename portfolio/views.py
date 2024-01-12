@@ -116,3 +116,6 @@ def addSkill(request):
     }
     return render(request, 'portfolio/skill_form.html', context)
 
+
+def votingPage(request):
+    return render(request, 'portfolio/chart.html')

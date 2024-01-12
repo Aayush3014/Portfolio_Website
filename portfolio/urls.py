@@ -1,6 +1,7 @@
 from os import name
 from django.urls import path
-from .views import homePage, projectpage, addProject, editProject, inboxPage, messagePage, addSkill
+from .views import homePage, projectpage, addProject, editProject, inboxPage, messagePage, addSkill, votingPage
+
 
 
 
@@ -13,6 +14,8 @@ urlpatterns = [
     path('inbox/',inboxPage, name='inbox'),
     path('message/<str:pk>/',messagePage, name='message'),
     path("add-skill/",addSkill,name='add-skill'),
+    
+    path("chart/",votingPage,name='chart'),
     
     
 ]
