@@ -22,6 +22,8 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('portfolio.urls'),name='portfolio_urls'),
+    path('',include('payment.urls'),name='payment_urls'),
+    
     
     # For Adding CKEditor to our project Editing Form.
     path('ckeditor/',include('ckeditor_uploader.urls')),

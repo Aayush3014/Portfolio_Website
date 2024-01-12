@@ -8,6 +8,7 @@
     display: flex;
     gap: 100px;
     justify-content: center;
+    align-items: center;
 }
 
 .navigation-bar-content{
@@ -48,6 +49,8 @@
 .intro-name{
     font-size: 80px;
     font-weight: 600;
+    letter-spacing: .05em;
+    line-height: 1em;
 }
 
 .hero-content-subheadline{
