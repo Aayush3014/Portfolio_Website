@@ -31,6 +31,9 @@ INSTALLED_APPS = [
     
     # For Adding CKEditor to our project Editing Form.
     'ckeditor_uploader',
+    
+    # 
+    'payment',
 ]
 
 MIDDLEWARE = [
@@ -133,3 +136,10 @@ CKEDITOR_UPLOAD_PATH = 'uploads/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+
+
+RAZOR_KEY_ID = "YOUR_KEY_ID"
+RAZOR_KEY_SECRET = "YOUR_KEY_SECRET"
