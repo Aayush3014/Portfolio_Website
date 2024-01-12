@@ -32,8 +32,11 @@ INSTALLED_APPS = [
     # For Adding CKEditor to our project Editing Form.
     'ckeditor_uploader',
     
-    # 
+    # For Razorpay Payments
     'payment',
+    
+    # for voting and charts
+    'rest_framework',
 ]
 
 MIDDLEWARE = [

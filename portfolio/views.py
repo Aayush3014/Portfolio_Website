@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import ProjectModel, SkillsModel, SkillsTagModel, Message, Comment
-from .forms import ProjectForm, MessageForm, skillsForm, commentForm
+from .forms import ProjectForm, MessageForm, skillsForm, commentForm, QuestionForm
 from django.contrib import messages
 
 
@@ -116,3 +116,16 @@ def addSkill(request):
     }
     return render(request, 'portfolio/skill_form.html', context)
 
+
+def votingPage(request):
+    form = QuestionForm()
+    if request.method == "POST":
+        form = QuestionForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request,'Your vote has been successfully added.')
+            return redirect('chart')
+    context = {
+        'form':form
+    }
+    return render(request, 'portfolio/chart.html', context)
